@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مواقيت الصلاة</title>
+    <!-- The favicon  -->
+    <link rel="icon" type="image/svg" href="favicon.svg">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Lalezar&display=swap" rel="stylesheet">
+    <!-- The main Css file -->
+    <link rel="stylesheet" href="prayer-time.css" />
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="time-info">
+        <h1 class="city"></h1>
+        <h3 class="date"></h3>
+        <hr>
+      </div>
+      <div class="prayers-time">
+        <div class="prayer-time-card" data-prayer="Fajr">
+          <h4 class="prayer-name">الفجر</h4>
+          <h4 class="prayer-time"></h4>
+        </div>
+        <div class="prayer-time-card" data-prayer="Sunrise">
+          <h4 class="prayer-name">الشروق</h4>
+          <h4 class="prayer-time"></h4>
+        </div>
+        <div class="prayer-time-card" data-prayer="Dhuhr">
+          <h4 class="prayer-name" >الظهر</h4>
+          <h4 class="prayer-time"></h4>
+        </div>
+        <div class="prayer-time-card" data-prayer="Asr">
+          <h4 class="prayer-name">العصر</h4>
+          <h4 class="prayer-time"></h4>
+        </div>
+        <div class="prayer-time-card " data-prayer="Maghrib">
+          <h4 class="prayer-name">المغرب</h4>
+          <h4 class="prayer-time"></h4>
+        </div>
+        <div class="prayer-time-card" data-prayer="Isha">
+          <h4 class="prayer-name">العشاء</h4>
+          <h4 class="prayer-time"></h4>
+        </div>
+      </div>
+      <div class="city-picker">
+        <select name="city" id="cities" onchange="getData(this.value)">
+          <option value="cairo-Egypt-القاهرة">القاهرة</option>
+          <option value="riyadh-Saudi Arabia-الرياض">الرياض</option>
+          <option value="london-United Kingdom-لندن" selected>لندن</option>
+        </select>
+      </div>
+    </div>
+    <script src="./node_modules/axios/dist/axios.js"></script>
+    <script src="prayer-time.js"></script>
+  </body>
+</html>
